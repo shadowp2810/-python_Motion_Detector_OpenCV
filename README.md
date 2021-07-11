@@ -17,44 +17,42 @@ Press `q` to end session <br><br>
 Objects in motion<br>
 Motion Detector<br>
 
-Script first needs a static image or baseline image. <br>
-Objects in motion are the objects , <br>
-that when subtracted with baseline image , still remain.  <br> <br>
+- Script first needs a static image or baseline image. <br>
+- Objects in motion are the objects, <br>
+that when subtracted with baseline image, still remain.  <br>
 
-The first frame when webcam is started , <br>
+- The first frame when webcam is started, <br>
 must be the static image. <br>
-
-Static image is greyscaled , <br>
+- Static image is first greyscaled, <br>
 and all other frames in loop are greyscaled. <br>
-Difference or `Delta frame` is made.  <br>
+- Difference or `Delta frame` is made.  <br>
 In difference the object in motion will have <br>
 light behind it from the first static photo. <br>
-All else in photo will be blackened.  <br> <br>
+All else in photo will be blackened.  <br>
 
-`Threshold Frame` turns the intensity to max , <br>
+- `Threshold Frame` turns the intensity to max , <br>
 which shows just white or black contracting objects in frame. <br>
-Below Threshold areas are black.  <br>
-A contour is made arround the objects in white ,  <br>
-and if they are over 500 px then they are considred moving.  <br><br>
+- Below Threshold areas are black.  <br>
+- A contour is made arround the objects in white ,  <br>
+and if they are over 500 px then they are considred moving.  <br>
 
-
-Python captures first frame , <br>
-converts it to greyscaled , <br>
-blurs it , <br>
-and stores the first frame.  <br>
-Then calculates difference between <br>
+1) Python captures first frame. <br>
+2) Converts it to greyscaled. <br>
+3) Blurs it. <br>
+4) And stores the first frame.  <br>
+5) Then calculates difference between <br>
 everyframe proceeding it and first frame.  <br>
-Finds contours , <br>
-and if contours is greater than a value , <br>
+6) Finds contours. <br>
+7) And if contours is greater than a value , <br>
 status is 1 so moving object detected. <br>
-Status list is appended , <br>
-but status list starts with 0 from first frame , <br>
-and everytime there is a change from 0 to 1 ,  <br>
+8) Status list is appended. <br>
+9) Status list starts with 0 from first frame. <br>
+10) And everytime there is a change from 0 to 1 ,  <br>
 or 1 to 0 in status list , then the date time <br>
-is recorded into a csv file using pandas. <br><br>
+is recorded into a csv file using pandas. <br>
 
-The csv file is loaded as a dataframe using pandas. <br>
-Bokeh using this dataframe, <br>
+11) The csv file is loaded as a dataframe using pandas. <br>
+12) Bokeh using this dataframe, <br>
 graphs the start and end times of the moving detected objects, <br>
-and makes a html file to visualize the data using a graph. <br>
+and makes a html file to visualize the data using a graph. <br> <br>
 
