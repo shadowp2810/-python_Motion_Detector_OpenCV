@@ -1,0 +1,37 @@
+Objects in motion
+Motion Detector
+
+Need a static image or baseline image 
+Objects in motion are the objects ,
+ that when subtracted with baseline image still remain. 
+
+The first frame when webcam is started ,
+must be the static image
+
+Static image is greyscaled , 
+and all other frames in loop are greyscaled
+Difference or `Delta frame` is made 
+In difference the object in motion will have ,
+light behind it from the first static photo ,
+all else in photo will be blackened. 
+
+`Threshold Frame` is turning the intensity of max ,
+which shows just white or black contracting objects in frame.
+Below Threshold areas are black. 
+A contour is made arround the objects in white , 
+and if they are over 500 px then they are considred moving. 
+
+
+
+Python captures first frame ,
+converts it to greyscaled ,
+blurs it ,
+stores the first frame , 
+calculates difference between everyframe and first frame , 
+finds contours , 
+and if contours is greater than a value ,
+status is 1 so moving object detected ,
+and status list is appended ,
+but status list starts with 0 from first frame ,
+and everytime there is a change from 0 to 1 , 
+or 1 to 0 in status list then the date time is recorded. 

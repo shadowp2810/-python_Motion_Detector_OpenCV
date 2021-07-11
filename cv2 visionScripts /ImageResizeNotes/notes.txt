@@ -1,0 +1,11 @@
+Computer vision using opencv , 
+opensource computer vision , 
+a library available in many languages , 
+for computer vision tasks.
+
+1 to read as is. 0 to read in b&w
+-1 for color with transperency. 
+
+
+
+
